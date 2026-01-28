@@ -5,48 +5,25 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact Us</title>
   <style>
-    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding: 2rem; max-width: 700px; margin: auto; }
-    label{display:block;margin-top:0.8rem}
-    input,textarea{width:100%;padding:.6rem;margin-top:.3rem;border:1px solid #ddd;border-radius:6px}
-    button{margin-top:1rem;padding:.6rem 1rem;background:#0366d6;color:#fff;border-radius:6px;border:0}
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding: 2rem; max-width: 900px; margin: auto; }
     .hint{margin-top:.8rem;color:#666;font-size:.95rem}
+    .form-container { position: relative; padding-bottom: 120%; height: 0; overflow: hidden; max-width:100%; }
+    .form-container iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
+    .back { margin-top:1.5rem; display:inline-block; color:#0366d6; text-decoration:none; }
   </style>
 </head>
 <body>
   <h1>Contact Us</h1>
 
-  <!-- Recommended: Formspree (replace the action URL with your Formspree endpoint) -->
-  <form action="https://formspree.io/f/your_form_id" method="POST">
-    <label>
-      Your name
-      <input type="text" name="name" required />
-    </label>
-    <label>
-      Your email
-      <input type="email" name="_replyto" required />
-    </label>
-    <label>
-      Message
-      <textarea name="message" rows="6" required></textarea>
-    </label>
-    <!-- simple anti-spam honeypot -->
-    <input type="text" name="_gotcha" style="display:none" />
-    <button type="submit">Send message</button>
-  </form>
+  <!-- Embedded Google Form (provided by user) -->
+  <div class="form-container">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5kj01W3bhZVdaROhCozgCRi_6oB4XCfrs-FDwokp64Bbi8g/viewform?embedded=true" width="640" height="1499" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
 
   <p class="hint">
-    Formspree is a free/paid form service that will email the form contents to you. To use it:
-    1) go to <a href="https://formspree.io" target="_blank" rel="noopener">formspree.io</a>,
-    2) sign up and create a form, and
-    3) replace <code>https://formspree.io/f/your_form_id</code> above with the endpoint they give you.
+    Responses will be saved to the Google Form and (optionally) to a linked Google Sheet. If you want to receive email notifications, open the linked Google Sheet → Extensions → Notifications rules → set an email notification on form submissions.
   </p>
 
-  <hr />
-
-  <!-- Mailto fallback (no setup) -->
-  <p>If you'd prefer a simple mail link that opens your email app, click below:</p>
-  <a class="button" href="mailto:you@example.com?subject=Website%20Contact&body=Hello%2C%0A%0A">Email us</a>
-
-  <p style="margin-top:1.5rem"><a href="index.html">&larr; Back to home</a></p>
+  <a class="back" href="index.html">&larr; Back to home</a>
 </body>
 </html>
